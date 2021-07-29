@@ -53,8 +53,7 @@ RUN dotnet_sdk_version=5.0.102 \
     && dotnet help
 
 # Copy notebooks
-
-COPY ./notebooks/ ${HOME}/notebooks/
+COPY ./notebooks/ ${HOME}/Notebooks/
 
 # Add package sources
 RUN echo "\
@@ -78,15 +77,11 @@ RUN echo "\
 RUN chown -R ${NB_UID} ${HOME}
 USER ${USER}
 
-
-# Install nteract 
+#Install nteract 
 RUN pip install nteract_on_jupyter
 
-# Install lastest build from master branch of Microsoft.DotNet.Interactive
+# Install lastest build from main branch of Microsoft.DotNet.Interactive
 RUN dotnet tool install -g Microsoft.dotnet-interactive --add-source "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json"
-
-# Latest stable from nuget.org
-#RUN dotnet tool install -g Microsoft.dotnet-interactive --add-source "https://api.nuget.org/v3/index.json"
 
 ENV PATH="${PATH}:${HOME}/.dotnet/tools"
 RUN echo "$PATH"
@@ -97,5 +92,5 @@ RUN dotnet interactive jupyter install
 # Enable telemetry once we install jupyter for the image
 ENV DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT=false
 
-# Set root to notebooks
-WORKDIR ${HOME}/notebooks/
+# Set root to Notebooks
+WORKDIR ${HOME}/Notebooks/
