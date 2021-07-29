@@ -1,0 +1,32 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Dataverse .NET Core",
+  "steps": [
+    {
+      "file": "sample/Program.cs",
+      "description": "Start with declaring clientId, client secret, and the instance.",
+      "line": 13
+    },
+    {
+      "file": "sample/Program.cs",
+      "description": "Build the connection string",
+      "line": 17
+    },
+    {
+      "file": "sample/Program.cs",
+      "description": "Create service client",
+      "line": 19
+    },
+    {
+      "file": "sample/Program.cs",
+      "description": "Retrieve multiple records:\r\n\r\n1. QueryExpression object for contact table\r\n2. Only full name column is retrieved \r\n3. Top 5 records\r\n",
+      "line": 21
+    },
+    {
+      "file": "sample/Program.cs",
+      "description": "Extract all names retrieved and display them on separate lines",
+      "line": 27
+    }
+  ],
+  "ref": "main"
+}
