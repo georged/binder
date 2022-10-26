@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:latest
+FROM jupyter/base-notebook:ubuntu-latest
 
 # Install .NET CLI dependencies
 
